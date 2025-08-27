@@ -39,4 +39,13 @@ public class TouristRespository {
         touristAttractions.add(touristAttraction);
         return touristAttraction;
     }
+
+    public ArrayList<TouristAttraction> deleteAttraction(String name){
+        for(TouristAttraction touristAttraction : touristAttractions){
+            if(name.equals(touristAttraction.getName())){
+                touristAttractions.remove(touristAttraction);
+            }
+        }
+        return touristAttractions;
+    }
 }

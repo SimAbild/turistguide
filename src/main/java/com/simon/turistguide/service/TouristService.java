@@ -26,4 +26,7 @@ public class TouristService {
     public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
         return repository.addAttraction(touristAttraction);
     }
+    public ArrayList<TouristAttraction> deleteAttraction(String name){
+        return repository.deleteAttraction(name);
+    }
 }
