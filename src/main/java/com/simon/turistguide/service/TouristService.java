@@ -22,4 +22,8 @@ public class TouristService {
        TouristAttraction touristAttraction = repository.findAttractionByName(name);
        return touristAttraction;
     }
+
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
+        return repository.addAttraction(touristAttraction);
+    }
 }

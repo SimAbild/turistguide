@@ -34,4 +34,9 @@ public class TouristRespository {
         }
         return null;
     }
+
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
+        touristAttractions.add(touristAttraction);
+        return touristAttraction;
+    }
 }
