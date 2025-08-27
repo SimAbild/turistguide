@@ -48,4 +48,11 @@ public class TouristRespository {
         }
         return touristAttractions;
     }
+
+    public TouristAttraction updateAttraction(String name, TouristAttraction touristAttraction) {
+        TouristAttraction attraction = findAttractionByName(name);
+        attraction.setName(touristAttraction.getName());
+        attraction.setDescription(touristAttraction.getDescription());
+        return attraction;
+    }
 }

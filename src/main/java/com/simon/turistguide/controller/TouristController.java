@@ -45,4 +45,10 @@ public class TouristController {
         ArrayList<TouristAttraction> removedAttraction = touristService.deleteAttraction(name);
         return new ResponseEntity<>(removedAttraction, HttpStatus.OK);
     }
+
+    @PostMapping("/update/{name}")
+    public ResponseEntity<TouristAttraction> updateAttraction(@RequestBody TouristAttraction touristAttraction, @PathVariable String name) {
+        TouristAttraction updatedAttraction = touristService.updateAttraction(name, touristAttraction);
+        return new ResponseEntity<>(updatedAttraction, HttpStatus.OK);
+    }
 }

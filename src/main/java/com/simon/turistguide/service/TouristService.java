@@ -19,8 +19,7 @@ public class TouristService {
     }
 
     public TouristAttraction findAttractionByName(String name){
-       TouristAttraction touristAttraction = repository.findAttractionByName(name);
-       return touristAttraction;
+       return repository.findAttractionByName(name);
     }
 
     public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
@@ -28,5 +27,9 @@ public class TouristService {
     }
     public ArrayList<TouristAttraction> deleteAttraction(String name){
         return repository.deleteAttraction(name);
+    }
+
+    public TouristAttraction updateAttraction(String name, TouristAttraction touristAttraction) {
+        return repository.updateAttraction(name, touristAttraction);
     }
 }
