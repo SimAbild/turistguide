@@ -25,4 +25,13 @@ public class TouristRespository {
     public ArrayList<TouristAttraction> getTouristAttractions() {
         return touristAttractions;
     }
+
+    public TouristAttraction findAttractionByName(String name){
+        for (TouristAttraction touristAttraction : touristAttractions){
+            if (touristAttraction.getName().equals(name)){
+                return touristAttraction;
+            }
+        }
+        return null;
+    }
 }

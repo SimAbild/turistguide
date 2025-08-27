@@ -24,5 +24,10 @@ public class TouristController {
         ArrayList<TouristAttraction> attractions = touristService.getTouristAttractions();
         return new ResponseEntity<>(attractions,HttpStatus.OK);
     }
+
+    @GetMapping("{name}"){
+        public ResponseEntity<ArrayList><TouristAttraction>>
+
+    }
 }
 //ændring
