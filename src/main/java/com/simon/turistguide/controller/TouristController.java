@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -25,9 +26,13 @@ public class TouristController {
         return new ResponseEntity<>(attractions,HttpStatus.OK);
     }
 
-    @GetMapping("{name}"){
-        public ResponseEntity<ArrayList><TouristAttraction>>
-
+    @GetMapping("{name}")
+        public ResponseEntity<TouristAttraction>getAttractionByName(
+                @PathVariable String name){
+        TouristAttraction touristAttraction = touristService.findAttractionByName(name);
+        if(touristAttraction == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(touristAttraction, HttpStatus.OK);
     }
 }
-//ændring
