@@ -43,6 +43,9 @@ public class TouristController {
     @PostMapping("/delete/{name}")
     public ResponseEntity<ArrayList<TouristAttraction>>deleteAttraction(@PathVariable String name){
         ArrayList<TouristAttraction> removedAttraction = touristService.deleteAttraction(name);
+        if(removedAttraction == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(removedAttraction, HttpStatus.OK);
     }
 

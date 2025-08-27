@@ -41,12 +41,14 @@ public class TouristRespository {
     }
 
     public ArrayList<TouristAttraction> deleteAttraction(String name){
-        for(TouristAttraction touristAttraction : touristAttractions){
-            if(name.equals(touristAttraction.getName())){
-                touristAttractions.remove(touristAttraction);
+        for (int i = 0; i < touristAttractions.size(); i++) {
+            if (touristAttractions.get(i).getName().equals(name)) {
+                touristAttractions.remove(i);
+                return touristAttractions;
+
             }
         }
-        return touristAttractions;
+        return null;
     }
 
     public TouristAttraction updateAttraction(String name, TouristAttraction touristAttraction) {
@@ -55,4 +57,5 @@ public class TouristRespository {
         attraction.setDescription(touristAttraction.getDescription());
         return attraction;
     }
+
 }
