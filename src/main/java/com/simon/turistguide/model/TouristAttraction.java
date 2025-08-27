@@ -25,4 +25,3 @@ public class TouristAttraction {
         this.description = description;
     }
 }
-//comment
