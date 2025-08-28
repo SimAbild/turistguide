@@ -29,7 +29,7 @@ public class TouristService {
         return repository.deleteAttraction(name);
     }
 
-    public TouristAttraction updateAttraction(String name, TouristAttraction touristAttraction) {
-        return repository.updateAttraction(name, touristAttraction);
+    public ArrayList<TouristAttraction> updateAttraction(TouristAttraction touristAttraction) {
+        return repository.updateAttraction(touristAttraction);
     }
 }

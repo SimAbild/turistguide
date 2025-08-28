@@ -41,18 +41,23 @@ public class TouristRespository {
     }
 
     public ArrayList<TouristAttraction> deleteAttraction(String name){
-        for(TouristAttraction touristAttraction : touristAttractions){
-            if(name.equals(touristAttraction.getName())){
-                touristAttractions.remove(touristAttraction);
+        for (int i = 0; i < touristAttractions.size(); i++) {
+            if (touristAttractions.get(i).getName().equals(name)) {
+                touristAttractions.remove(i);
+                return touristAttractions;
+
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<TouristAttraction> updateAttraction(TouristAttraction touristAttraction) {
+        for(TouristAttraction touristAttraction1 : touristAttractions){
+            if(touristAttraction.getName().equals(touristAttraction1.getName())){
+                touristAttraction1.setDescription(touristAttraction.getDescription());
             }
         }
         return touristAttractions;
     }
 
-    public TouristAttraction updateAttraction(String name, TouristAttraction touristAttraction) {
-        TouristAttraction attraction = findAttractionByName(name);
-        attraction.setName(touristAttraction.getName());
-        attraction.setDescription(touristAttraction.getDescription());
-        return attraction;
-    }
 }
