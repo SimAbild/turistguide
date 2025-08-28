@@ -51,11 +51,13 @@ public class TouristRespository {
         return null;
     }
 
-    public TouristAttraction updateAttraction(String name, TouristAttraction touristAttraction) {
-        TouristAttraction attraction = findAttractionByName(name);
-        attraction.setName(touristAttraction.getName());
-        attraction.setDescription(touristAttraction.getDescription());
-        return attraction;
+    public ArrayList<TouristAttraction> updateAttraction(TouristAttraction touristAttraction) {
+        for(TouristAttraction touristAttraction1 : touristAttractions){
+            if(touristAttraction.getName().equals(touristAttraction1.getName())){
+                touristAttraction1.setDescription(touristAttraction.getDescription());
+            }
+        }
+        return touristAttractions;
     }
 
 }

@@ -49,9 +49,9 @@ public class TouristController {
         return new ResponseEntity<>(removedAttraction, HttpStatus.OK);
     }
 
-    @PostMapping("/update/{name}")
-    public ResponseEntity<TouristAttraction> updateAttraction(@RequestBody TouristAttraction touristAttraction, @PathVariable String name) {
-        TouristAttraction updatedAttraction = touristService.updateAttraction(name, touristAttraction);
-        return new ResponseEntity<>(updatedAttraction, HttpStatus.OK);
+    @PostMapping("/update/")
+    public ResponseEntity<ArrayList<TouristAttraction>> updateAttraction(@RequestBody TouristAttraction touristAttraction) {
+        ArrayList<TouristAttraction> updatedAttractions = touristService.updateAttraction(touristAttraction);
+        return new ResponseEntity<>(updatedAttractions, HttpStatus.OK);
     }
 }
