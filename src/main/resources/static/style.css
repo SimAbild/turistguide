@@ -1,17 +1,52 @@
 body {
-    background-color: blanchedalmond;
+    margin: 0px;
+}
+.container {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "content content menu"
+    "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 5px;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+.container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+.container > div.header {
+    grid-area: header;
+    text-align: center;
+    height: 150px;
+    background-image: url("pngtree-lively-amusement-park-11th-national-day-carnival-banner-picture-image_1003853.png");
+    background-size: 470px;
+}
+.container > div.menu {
+    grid-area: menu;
+    background-color: #d3ec9b;
+}
+.container > div.content {
+    grid-area: content;
+    min-height: 520px;
+    background-color: #d3ec9b;
+}
+.container > div.footer {
+    grid-area: footer;
+    background-color: lightgray;
+    height: 100%;
 }
 h2{
     font-size: 20px;
     font-style: italic;
     font-weight: normal;
 }
-.welcome-img {
-    position: absolute;
-    top: 110px;
-    left: 650px;
-    max-width: 750px;
-    height: auto;
+
+h1{
+    width:100%;
+    height: 100%;
 }
 .socials{
     width: 45px;
@@ -24,8 +59,8 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: antiquewhite;
+    width: 250px;
+    /*background-color: antiquewhite;*/
 }
 
 li a {
@@ -35,6 +70,6 @@ li a {
     text-decoration: none;
 }
 li a:hover {
-    background-color: rosybrown;
-    color: white;
+    background-color: #ed9556;
+    color: black;
 }
