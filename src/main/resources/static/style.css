@@ -32,6 +32,26 @@ body {
     grid-area: content;
     min-height: 520px;
     background-color: #d3ec9b;
+    .tivoli-pic{
+        height: 200px;
+        width: auto;
+    }
+    .bakken{
+        height: 200px;
+        width: auto;
+    }
+    .faarup{
+        height: 200px;
+        width: auto;
+    }
+    .legoland{
+        height: 200px;
+        width: auto;
+    }
+    .BonBon{
+        height: 200px;
+        width: auto;
+    }
 }
 .container > div.footer {
     grid-area: footer;
